@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Crop</title>
+</head>
+<body>
+<h1>Add New Crop</h1>
+<nav>
+    <ul>
+        <li><a href="/famer/product">Product</a></li>
+        <li><a href="/farmer/crop_management">Crop Management</a></li>
+        <li><a href="/famer/payments">View Payment</a></li>
+        <li><a href="/famer/about">About us</a></li>
+        <li><a href="/famer/profile">Manage profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</nav>
+
+<form action="/farmer/crop/add" method="post">
+    <label for="category">Category:</label><br>
+    <input type="text" id="category" name="category" required><br><br>
+
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+
+    <label for="plantingDate">Planting Date:</label><br>
+    <input type="date" id="plantingDate" name="plantingDate"><br><br>
+
+    <label for="weatherData">Weather Data:</label><br>
+    <input type="text" id="weatherData" name="weatherData"><br><br>
+
+    <label for="wateringDate">Watering Date:</label><br>
+    <input type="date" id="wateringDate" name="wateringDate"><br><br>
+
+
+    <button type="submit" style="background: #4CAF50; color: white; padding: 10px 15px;">Add Crop</button>
+</form>
+</body>
+</html>

@@ -51,7 +51,7 @@ public class UserController {
 
                 // Redirect based on user role
                 if (user.getRole() == User.Role.FARMER) {
-                    return "/farmer/home";  // Redirect to farmer page
+                    return "/farmer/farmer_product_page";  // Redirect to farmer page
                 } else if (user.getRole() == User.Role.CUSTOMER) {
                     return "/customer/home";  // Redirect to customer page
                 } else if (user.getRole() == User.Role.ADMIN) {

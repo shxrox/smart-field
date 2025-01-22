@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crop Management</title>
+</head>
+<body>
+<h1>Crop Management</h1>
+<nav>
+  <ul>
+    <li><a href="/famer/product">Product</a></li>
+    <li><a href="/farmer/crop">Crop management</a></li>
+    <li><a href="/famer/payments">View Payment</a></li>
+    <li><a href="/famer/about">About us</a></li>
+    <li><a href="/famer/profile">Manage profile</a></li>
+    <li><a href="/logout">Logout</a></li>
+  </ul>
+</nav>
+
+<h2>All Crops</h2>
+<a href="/farmer/crop/add" style="text-decoration: none; background: #4CAF50; color: white; padding: 10px 15px; border-radius: 5px;">Add New Crop</a>
+
+<table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Planting Date</th>
+    <th>Weather Data</th>
+    <th>Watering Date</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="crop : ${crops}">
+    <td th:text="${crop.id}"></td>
+    <td th:text="${crop.category}"></td>
+    <td th:text="${crop.description}"></td>
+    <td th:text="${crop.plantingDate}"></td>
+    <td th:text="${crop.weatherData}"></td>
+    <td th:text="${crop.wateringDate}"></td>
+    <td>
+      <a th:href="@{/farmer/crop/delete/{id}(id=${crop.id})}"
+         onclick="return confirm('Are you sure you want to delete this crop?');">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
