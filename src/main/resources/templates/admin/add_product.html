@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Products</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+<h1>Manage Products</h1>
+
+<!-- Add/Edit Product Form -->
+<form th:action="${product.id == null ? '/admin/product' : '/admin/product/edit/' + product.id}" method="post" enctype="multipart/form-data">
+    <label for="name">Product Name:</label>
+    <input type="text" id="name" name="name" th:value="${product.name}" required><br><br>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" th:text="${product.description}" required></textarea><br><br>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" step="0.01" th:value="${product.price}" required><br><br>
+
+    <label for="image">Product Image:</label>
+    <input type="file" id="image" name="image" accept="image/*"><br><br>
+
+    <button type="submit" th:text="${product.id == null ? 'Add Product' : 'Save Changes'}"></button>
+</form>
+
+<hr>
+
+<!-- Product Table -->
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.description}"></td>
+        <td th:text="${product.price}"></td>
+        <td>
+            <img th:src="${product.imageUrl}" alt="Product Image" width="100">
+        </td>
+        <td>
+            <a th:href="@{'/admin/product/edit/' + ${product.id}}">Edit</a> |
+            <a th:href="@{'/admin/product/delete/' + ${product.id}}" onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
