@@ -65,6 +65,7 @@ public class UserController {
             model.addAttribute("error", "User not found");
         }
 
-        return "login";  // Return to login page if login fails
+        return "login";
     }
+
 }

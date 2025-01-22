@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Farmer</title>
+</head>
+<body>
+<h1>Farmer</h1>
+<nav>
+    <ul>
+        <li><a href="/famer/product">Product</a></li>
+        <li><a href="/famer/cropmanagement">Crop management</a></li>
+        <li><a href="/famer/payments">View Payment</a></li>
+        <li><a href="/famer/about">About us</a></li>
+        <li><a href="/famer/profile">Manage profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</nav>
+
+<h2>Product Details</h2>
+
+<!-- Product Cards -->
+<div>
+    <!-- Iterate over the products to display each one -->
+    <div th:each="product : ${products}">
+        <div style="border: 1px solid #ccc; padding: 20px; margin: 10px; display: inline-block; width: 300px; text-align: center;">
+            <h3 th:text="${product.name}">Product Name</h3>
+            <img th:src="@{${product.imageUrl}}" alt="Product Image" width="200" style="max-height: 200px; object-fit: contain;">
+            <p th:text="${product.description}">Product Description</p>
+            <p><strong>Price:</strong> $<span th:text="${product.price}">Price</span></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
