@@ -8,10 +8,10 @@
 <h1>Farmer</h1>
 <nav>
     <ul>
-        <li><a href="/farmer/product">Product</a></li>
+        <li><a href="/famer/product">Product</a></li>
         <li><a href="/farmer/crop">Crop management</a></li>
-        <li><a href="/farmer/payments">View Payment</a></li>
-        <li><a href="/farmer/about">About us</a></li>
+        <li><a href="/famer/payments">View Payment</a></li>
+        <li><a href="/famer/about">About us</a></li>
         <li><a href="/farmer/profile">Manage profile</a></li>
         <li><a href="/logout">Logout</a></li>
     </ul>
@@ -29,6 +29,10 @@
             <img th:src="@{${product.imageUrl}}" alt="Product Image" width="200" style="max-height: 200px; object-fit: contain;">
             <p th:text="${product.description}">Product Description</p>
             <p><strong>Price:</strong> $<span th:text="${product.price}">Price</span></p>
+            <!-- Buy Now Button -->
+            <a th:href="@{/purchase/{id}(id=${product.id})}">
+                <button>Buy Now</button>
+            </a>
         </div>
     </div>
 </div>
