@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Management</title>
+</head>
+<body>
+<h1>Delete Management</h1>
+
+<!-- Display existing Delete Records -->
+<h2>Existing Delete Records</h2>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Reason</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iterate over the list of deletes -->
+    <tr th:each="delete : ${deletes}">
+        <td th:text="${delete.id}"></td>
+        <td th:text="${delete.reason}"></td>
+        <td>
+            <a th:href="@{'/farmer/profile/delete/' + ${delete.id}}">Cancel</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- Add New Delete Record Form -->
+<h2>Add New Delete Record</h2>
+<form action="/farmer/profile/add" method="post" th:object="${delete}">
+    <label for="reason">Reason:</label>
+    <input type="text" id="reason" th:field="*{reason}" required>
+    <div th:if="${#fields.hasErrors('reason')}" th:errors="*{reason}"></div>
+
+    <br><br>
+
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>

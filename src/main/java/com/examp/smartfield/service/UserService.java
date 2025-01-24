@@ -35,8 +35,7 @@ public class UserService {
     }
 
     public List<User> searchUsersByName(String name) {
-        return userRepository.findByNameContaining(name);  // Add this method to your UserRepository
+        return userRepository.findByNameContaining(name);
     }
-
 
 }

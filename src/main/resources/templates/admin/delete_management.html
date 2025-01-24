@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Management</title>
+</head>
+<body>
+<h1>Delete Management</h1>
+
+
+<h2>Existing Delete Records</h2>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Reason</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iterate over the list of deletes passed from the controller -->
+    <tr th:each="delete : ${deletes}">
+        <td th:text="${delete.id}"></td>
+        <td th:text="${delete.reason}"></td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
