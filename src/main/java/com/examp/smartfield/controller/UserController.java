@@ -1,6 +1,8 @@
 package com.examp.smartfield.controller;
 
+import com.examp.smartfield.model.Purchase;
 import com.examp.smartfield.model.User;
+import com.examp.smartfield.service.PurchaseService;
 import com.examp.smartfield.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -66,6 +69,11 @@ public class UserController {
         }
 
         return "login";
+    }
+
+    @GetMapping("/logout")
+    public String showAboutPage() {
+        return "/login";
     }
 
 

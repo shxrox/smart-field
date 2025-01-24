@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/purchase")
 public class PurchaseController {
@@ -51,5 +53,11 @@ public class PurchaseController {
 
         model.addAttribute("message", "Purchase successful!");
         return "/farmer/purchase_success"; // Redirect to success page after purchase
+    }
+    @GetMapping("/farmer/payments")
+    public String viewPayments(Model model) {
+        List<Purchase> purchases = purchaseService.getAllPurchases(); // Fetch the payment details
+        model.addAttribute("purchases", purchases);
+        return "/farmer/payments"; // Return the view to display the payment details
     }
 }
