@@ -21,19 +21,19 @@ public class DeleteController {
     public String showDeleteManagementPage(Model model) {
         List<Delete> deletes = deleteService.getAllDeletes();
         model.addAttribute("deletes", deletes);
-        model.addAttribute("delete", new Delete()); // Adding empty delete object for form
-        return "/farmer/delete_account"; // Show the page with delete records and the add form
+        model.addAttribute("delete", new Delete());
+        return "/farmer/delete_account";
     }
 
     @PostMapping("/add")
     public String saveDelete(@ModelAttribute("delete") @Valid Delete delete) {
         deleteService.saveDelete(delete);
-        return "redirect:/farmer/profile"; // Redirect to the same page after saving
+        return "redirect:/farmer/profile";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteById(@PathVariable Integer id) {
         deleteService.deleteById(id);
-        return "redirect:/farmer/profile"; // Redirect to the same page after deletion
+        return "redirect:/farmer/profile";
     }
 }

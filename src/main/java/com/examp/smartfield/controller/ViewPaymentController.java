@@ -17,11 +17,11 @@ public class ViewPaymentController {
     @Autowired
     private PurchaseService purchaseService;
 
-    // Controller method to show payment details
+
     @GetMapping("/payments")
     public String viewPayments(Model model) {
-        List<Purchase> purchases = purchaseService.getAllPurchases(); // Fetch all purchase records
-        model.addAttribute("purchases", purchases); // Add purchases to the model to display in the view
-        return "farmer/payments"; // Return the payments view to display the table
+        List<Purchase> purchases = purchaseService.getAllPurchases();
+        model.addAttribute("purchases", purchases);
+        return "farmer/payments";
     }
 }

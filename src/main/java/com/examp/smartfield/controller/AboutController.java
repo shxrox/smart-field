@@ -10,6 +10,6 @@ public class AboutController {
 
     @GetMapping("/about")
     public String showAboutPage() {
-        return "/farmer/about"; // Return the 'about' view for the About Us page
+        return "/farmer/about";
     }
 }

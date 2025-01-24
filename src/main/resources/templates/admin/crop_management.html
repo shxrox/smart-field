@@ -21,7 +21,7 @@
 
 <h2>All Crops</h2>
 
-<!-- Table displaying the crops -->
+
 <table border="1" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
     <thead>
     <tr>
@@ -34,7 +34,7 @@
     </tr>
     </thead>
     <tbody>
-    <!-- Loop through the crops and display them in rows -->
+
     <tr th:each="crop : ${crops}">
         <td th:text="${crop.id}"></td>
         <td th:text="${crop.category}"></td>

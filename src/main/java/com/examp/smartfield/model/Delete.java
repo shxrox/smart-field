@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "delete_records") // Renamed table
+@Table(name = "delete_records")
 public class Delete {
 
     @Id

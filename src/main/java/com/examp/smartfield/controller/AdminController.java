@@ -17,14 +17,14 @@ public class AdminController {
     @Autowired
     private CropService cropService;
 
-    // Endpoint to show admin dashboard
+
     @GetMapping("/dashboard")
     public String showAdminDashboard(Model model) {
         model.addAttribute("pageTitle", "Admin Dashboard");
-        return "/admin/dashboard"; // View for admin dashboard
+        return "/admin/dashboard";
     }
 
-    // Endpoint to show crop management details in admin
+
     @GetMapping("/cropmanagement")
     public String showCropManagementPage(Model model) {
         List<Crop> crops = cropService.getAllCrops();

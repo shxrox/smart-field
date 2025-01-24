@@ -43,22 +43,22 @@ public class UserController {
                             @RequestParam("password") String password,
                             Model model) {
 
-        // Check if the user exists by email
+
         Optional<User> optionalUser = userService.findUserByEmail(email);
 
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
 
-            // Validate password (in real-world scenarios, use a secure method like bcrypt)
+
             if (user.getPassword().equals(password)) {
 
-                // Redirect based on user role
+
                 if (user.getRole() == User.Role.FARMER) {
-                    return "/farmer/farmer_product_page";  // Redirect to farmer page
+                    return "/farmer/farmer_product_page";
                 } else if (user.getRole() == User.Role.CUSTOMER) {
-                    return "/customer/home";  // Redirect to customer page
+                    return "/customer/home";
                 } else if (user.getRole() == User.Role.ADMIN) {
-                    return "/admin/dashboard";  // Redirect to admin dashboard
+                    return "/admin/dashboard";
                 }
 
             } else {

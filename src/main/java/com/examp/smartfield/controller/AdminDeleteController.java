@@ -18,19 +18,18 @@ public class AdminDeleteController {
     @Autowired
     private DeleteService deleteService;
 
-    // Endpoint for Admin to view the delete records
+
     @GetMapping("/delete_management")
     public String showAdminDeleteManagement(Model model) {
         List<Delete> deletes = deleteService.getAllDeletes();
         model.addAttribute("deletes", deletes);
-        return "admin/delete_management"; // Return the admin template for delete records
+        return "admin/delete_management";
     }
 
-    // Add a new delete record
     @PostMapping("/delete_management/add")
     public String addDeleteRecord(@ModelAttribute("delete") @Valid Delete delete) {
         deleteService.saveDelete(delete);
-        return "redirect:/admin/delete_management"; // Redirect back to the admin delete management page
+        return "redirect:/admin/delete_management";
     }
 
 }

@@ -13,7 +13,7 @@ public class Purchase {
     private Long id;
 
     @NotNull
-    private Long productId; // Reference to the purchased product
+    private Long productId;
 
     @NotBlank(message = "Card number is required")
     private String cardNumber;
@@ -25,7 +25,7 @@ public class Purchase {
     private String cardholderName;
 
     @NotNull
-    private Double amount; // Amount paid
+    private Double amount;
 
     public Purchase() {
     }
@@ -38,7 +38,7 @@ public class Purchase {
         this.amount = amount;
     }
 
-    // Getters and Setters
+
     public Long getId() {
         return id;
     }

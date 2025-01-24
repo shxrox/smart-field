@@ -44,7 +44,7 @@ public class PurchaseController {
         Product product = productService.getProductById(productId);
         if (product == null) {
             model.addAttribute("error", "Invalid product ID.");
-            return "error"; // Handle errors gracefully
+            return "errormessage";
         }
 
         // Save purchase details
@@ -52,12 +52,12 @@ public class PurchaseController {
         purchaseService.savePurchase(purchase);
 
         model.addAttribute("message", "Purchase successful!");
-        return "/farmer/purchase_success"; // Redirect to success page after purchase
+        return "/farmer/purchase_success";
     }
     @GetMapping("/farmer/payments")
     public String viewPayments(Model model) {
-        List<Purchase> purchases = purchaseService.getAllPurchases(); // Fetch the payment details
+        List<Purchase> purchases = purchaseService.getAllPurchases();
         model.addAttribute("purchases", purchases);
-        return "/farmer/payments"; // Return the view to display the payment details
+        return "/farmer/payments";
     }
 }

@@ -18,7 +18,7 @@ public class PurchaseService {
     }
 
     public List<Purchase> getAllPurchases() {
-        return purchaseRepository.findAll(); // Fetch all purchases from the database
+        return purchaseRepository.findAll();
 
     }
 }

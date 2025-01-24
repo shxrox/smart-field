@@ -45,7 +45,6 @@ public class User {
         this.email = email;
     }
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }

@@ -25,10 +25,10 @@ public class Crop {
 
     private String mediaType;
 
-    // Default Constructor
+
     public Crop() {}
 
-    // Parameterized Constructor
+
     public Crop(String category, String description, LocalDate plantingDate, String weatherData, LocalDate wateringDate, String mediaType) {
         this.category = category;
         this.description = description;
@@ -38,7 +38,6 @@ public class Crop {
 
     }
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }

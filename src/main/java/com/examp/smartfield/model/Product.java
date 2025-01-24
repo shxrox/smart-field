@@ -19,7 +19,7 @@ public class Product {
 
     private Double price;
 
-    private String imageUrl; // Field for storing the image URL
+    private String imageUrl;
 
     public Product() {
     }
