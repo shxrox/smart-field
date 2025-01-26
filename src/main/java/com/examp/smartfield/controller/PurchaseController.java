@@ -47,7 +47,7 @@ public class PurchaseController {
             return "errormessage";
         }
 
-        // Save purchase details
+
         Purchase purchase = new Purchase(productId, cardNumber, expiryDate, cardholderName, product.getPrice());
         purchaseService.savePurchase(purchase);
 
@@ -60,4 +60,5 @@ public class PurchaseController {
         model.addAttribute("purchases", purchases);
         return "/farmer/payments";
     }
+
 }

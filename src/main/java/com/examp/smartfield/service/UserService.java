@@ -37,5 +37,4 @@ public class UserService {
     public List<User> searchUsersByName(String name) {
         return userRepository.findByNameContaining(name);
     }
-
 }
