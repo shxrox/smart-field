@@ -2,35 +2,183 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>About Us | SmartField</title>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+
+  <style>
+    nav {
+      background-color: #2d6a4f;
+    }
+
+    .navbar-brand img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    .nav-link {
+      color: #ffffff !important;
+    }
+
+    .nav-link:hover {
+      color: #89ceaf !important;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      color: #2d6a4f;
+    }
+
+    footer {
+      background-color: #2d6a4f;
+      color: white;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #89ceaf;
+      text-decoration: underline;
+    }
+
+    footer .text-uppercase {
+      font-weight: bold;
+    }
+
+    .card {
+      margin: 20px 0;
+    }
+  </style>
 </head>
 <body>
-<nav>
-  <ul>
-    <li><a href="/famer/product">Product</a></li>
-    <li><a href="/farmer/crop">Crop management</a></li>
-    <li><a href="/farmer/payments">View Payment</a></li>
-    <li><a href="/farmer/about">About us</a></li>
-    <li><a href="/farmer/profile">Manage profile</a></li>
-    <li><a href="/farmer/logout">Logout</a></li>
-  </ul>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/farmer/home"><img src="/resources/logo.jpg" alt="Logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link active" href="/famer/product">Product</a></li>
+        <li class="nav-item"><a class="nav-link" href="/farmer/crop">Crop Management</a></li>
+        <li class="nav-item"><a class="nav-link" href="/farmer/payments">View Payment</a></li>
+        <li class="nav-item"><a class="nav-link" href="/farmer/about">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="/farmer/profile">Send Request</a></li>
+        <li class="nav-item"><a class="nav-link text-danger" href="/farmer/logout">Logout</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
-<h1>About Us</h1>
 
-<p>Welcome to our SmartField Project!</p>
 
-<h2>Our Mission</h2>
-<p>We aim to provide innovative solutions for farmers to manage their products and crops more efficiently.</p>
+<div class="container my-5">
+  <h1>About Us</h1>
 
-<h2>Our Vision</h2>
-<p>We envision a world where technology drives agriculture forward, ensuring better productivity and sustainability for farmers everywhere.</p>
+  <div class="row">
+    <!-- Mission Card -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Our Mission</h5>
+          <p class="card-text">We aim to provide innovative solutions for farmers to manage their products and crops more efficiently.</p>
+        </div>
+      </div>
+    </div>
 
-<h2>Our Team</h2>
-<p>Our team consists of passionate developers, agricultural experts, and entrepreneurs who are dedicated to making a difference in the farming industry.</p>
 
-<h2>Contact Us</h2>
-<p>If you have any questions or need further information, feel free to reach out to us at <strong>info@smartfield.com</strong>.</p>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Our Vision</h5>
+          <p class="card-text">We envision a world where technology drives agriculture forward, ensuring better productivity and sustainability for farmers everywhere.</p>
+        </div>
+      </div>
+    </div>
 
-<h3>Thank you for visiting our website!</h3>
+
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Our Team</h5>
+          <p class="card-text">Our team consists of passionate developers, agricultural experts, and entrepreneurs who are dedicated to making a difference in the farming industry.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Information -->
+  <div class="card mt-4">
+    <div class="card-body text-center">
+      <h5 class="card-title">Contact Us</h5>
+      <p>If you have any questions or need further information, feel free to reach out to us at <strong>info@smartfield.com</strong>.</p>
+    </div>
+  </div>
+
+
+  <div class="text-center mt-4">
+    <h5>Our Location</h5>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4047293.714096803!2d78.06319104338313!3d7.849430220822445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2593cf65a1e9d%3A0xe13da4b400e2d38c!2sSri%20Lanka!5e0!3m2!1sen!2slk!4v1737892684631!5m2!1sen!2slk"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
+
+
+<footer class="text-center text-lg-start">
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <div class="me-5 d-none d-lg-block">
+      <span>Connecting farmers with the market!</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <h6 class="text-uppercase mb-4">SmartField</h6>
+          <p>A platform for farmers to manage crops, connect with buyers, and purchase products efficiently.</p>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase mb-4">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="/farmer/product">Product</a></li>
+            <li><a href="/farmer/crop">Crop Management</a></li>
+            <li><a href="/farmer/payments">View Payment</a></li>
+            <li><a href="/farmer/about">About Us</a></li>
+            <li><a href="/farmer/profile">Manage Profile</a></li>
+            <li><a href="/farmer/logout">Logout</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase mb-4">Contact</h6>
+          <p>Colombo, Sri Lanka</p>
+          <p>info@smartfield.lk</p>
+          <p>+94 123 445 6789</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.1);">
+    © 2025 Copyright:
+    <a class="fw-bold" href="https://smartfield.lk/">SmartField</a>
+  </div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
 </body>
 </html>
