@@ -89,28 +89,32 @@
 
 <div class="container mt-5">
   <h1 class="text-center text-success mb-4">Payment Details</h1>
-  <table class="table table-bordered table-hover table-striped text-center">
-    <thead class="thead-dark">
-    <tr>
-      <th>Product ID</th>
-      <th>Card Number</th>
-      <th>Cardholder Name</th>
-      <th>Amount</th>
-      <th>Expiry Date</th>
-    </tr>
-    </thead>
-    <tbody>
 
-    <tr th:each="purchase : ${purchases}">
-      <td th:text="${purchase.productId}">Product ID</td>
-      <td th:text="${purchase.cardNumber}">Card Number</td>
-      <td th:text="${purchase.cardholderName}">Cardholder Name</td>
-      <td th:text="${purchase.amount}">Amount</td>
-      <td th:text="${purchase.expiryDate}">Expiry Date</td>
-    </tr>
-    </tbody>
-  </table>
+  <!-- Responsive table wrapper -->
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover table-striped text-center">
+      <thead class="thead-dark">
+      <tr>
+        <th>Product ID</th>
+        <th>Card Number</th>
+        <th>Cardholder Name</th>
+        <th>Amount</th>
+        <th>Expiry Date</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="purchase : ${purchases}">
+        <td th:text="${purchase.productId}">Product ID</td>
+        <td th:text="${purchase.cardNumber}">Card Number</td>
+        <td th:text="${purchase.cardholderName}">Cardholder Name</td>
+        <td th:text="${purchase.amount}">Amount</td>
+        <td th:text="${purchase.expiryDate}">Expiry Date</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
+
 
 
 <footer class="text-center text-lg-start">

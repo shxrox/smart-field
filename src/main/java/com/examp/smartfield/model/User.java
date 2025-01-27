@@ -97,5 +97,5 @@ public class User {
         this.email = email;
     }
 
-    // Getters and Setters...
+
 }
